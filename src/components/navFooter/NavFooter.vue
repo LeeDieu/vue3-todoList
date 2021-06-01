@@ -4,9 +4,9 @@
     <div v-if="isComplete > 0" class="btn">
       <button @click="clear">清除已完成</button>
     </div>
-    <div class="exit">
+    <!-- <div class="exit">
       <button @click="exit">退出</button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -60,7 +60,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .container {
   display: flex;
-  align-items: center;
+  // align-items: center;
   .btn {
     margin-left: 10px;
   }

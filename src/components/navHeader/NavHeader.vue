@@ -1,10 +1,12 @@
 <template>
   <header>
-    <input
+    <el-input
       placeholder="请输入任务名称"
-      v-model="value"
+      v-model="input"
       @keydown.enter="enter"
-    />
+      clearable
+    >
+    </el-input>
   </header>
 </template>
 
@@ -13,17 +15,17 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "navHeader",
   setup(props,ctx) {
-    let value = ref("");
+    let input = ref("");
     //按回车确认
     let enter = () => {
       //把输入框的内容传递给父组件
-      ctx.emit('add',value.value)
+      ctx.emit('add',input.value)
       //清空输入框
-      value.value = ""
+      input.value = ""
         // console.log(value.value)
     };
     return {
-      value,
+      input,
       enter,
     };
   },

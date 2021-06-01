@@ -1,7 +1,9 @@
 <template>
   <!-- 开始页 -->
-  <div>
-    <button @click="start">开始任务</button>
+  <div class="body">
+    <el-button type="primary" @click="start"
+      >开始任务<i class="el-icon-arrow-right el-icon--right"></i
+    ></el-button>
   </div>
 </template>
 
@@ -25,10 +27,10 @@ export default defineComponent({
       //数据初始化的操作 接收路由传递的参数
     });
 
-    onUnmounted(()=>{
-        //组件卸载时的生命周期
-        // 清除定时器 清除闭包函数...
-    })
+    onUnmounted(() => {
+      //组件卸载时的生命周期
+      // 清除定时器 清除闭包函数...
+    });
 
     let start = () => {
       //push 如果是穿的对象的形式 就可以传递参数
@@ -61,5 +63,13 @@ export default defineComponent({
 </script>
 
 
-<style>
+<style scoped lang='scss'>
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body button {
+  margin-top: 600px;
+}
 </style>
